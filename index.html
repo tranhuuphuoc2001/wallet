@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="containerAll">
+        <div class="wallet">
+            <div class="walletList"></div>
+            <button type="button" onclick="showAddModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Wallet</button>
+        </div>
+        <div class="walletDetail">
+            <div class="info">
+                <div class="in">
+                    <h4>Tiền vào</h4>
+                    <h3 class="in-money"></h3>
+                </div>
+                <div class="out">
+                    <h4>Tiền ra</h4>
+                    <h3 class="out-money"></h3>
+                </div>
+                <h4 class="remain"></h4>
+            </div>
+            <div class="detail"></div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add and Update Wallet</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="addWalletName">
+                <h6>Wallet</h6>
+                <input type="text" placeholder="Wallet name" class="walletName">
+                <div class="error"></div>
+                <hr>
+              </div>
+              <div class="addWalletAction">
+                
+                <h6>Income/Expense</h6>
+                <select name="" class="actionType">
+                  <option value="Income">Income</option>
+                  <option value="Expense">Expense</option>
+                </select>
+                <input type="number" placeholder="Action money" class="actionMoney">
+                <input type="text" placeholder="Action description" class="actionDes">
+                <input type="date" class="actionDate">
+                <div hidden="true" class="actionIndex"></div>
+                <div class="errorAction"></div>
+              </div>
+              
+              
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary closeBtn" data-bs-dismiss="modal">Close</button>
+              <div class="delAndUp">
+                <button type="button" class="btn btn-info" onclick="upWallet()">Update Wallet</button>
+              </div>
+              
+              <div class="addWallet">
+                <button type="button" class="btn btn-primary" onclick="addWallet()">Add Wallet</button>
+              </div>
+              <div class="addAction">
+                <button type="button" class="btn btn-success" onclick="addNewAction()">Add new Action</button>
+              </div>
+              <div class="upAction">
+                <button type="button" class="btn btn-info" onclick="updateAction()">Update Action</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
